@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :likes,
+             :dependent => :destroy
+
   has_many   :photos_posts,
              :class_name => "Photo",
              :dependent => :destroy
