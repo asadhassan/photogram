@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :photos_posts,
+             :class_name => "Photo",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
