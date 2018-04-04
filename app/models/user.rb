@@ -23,6 +23,14 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :senders,
+             :through => :received_requests,
+             :source => :sender
+
+  has_many   :influencers,
+             :through => :sent_requests,
+             :source => :recipient
+
   has_many   :liked_photos,
              :through => :likes,
              :source => :photo
